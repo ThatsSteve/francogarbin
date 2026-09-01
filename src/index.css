@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: #FAF9F6;
+    color: #0F172A;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Playfair Display', Georgia, serif;
+    letter-spacing: -0.015em;
+  }
+}
+
+@layer utilities {
+  .editorial-border {
+    border-color: #E2E8F0;
+  }
+  
+  .hairline-border {
+    border: 1px solid rgba(226, 232, 240, 0.8);
+  }
+
+  .nav-blur {
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+  }
+
+  .clean-card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .clean-card:hover {
+    border-color: #CBD5E1;
+    box-shadow: 0 10px 30px -10px rgba(10, 25, 47, 0.06);
+  }
+
+  .navy-panel {
+    background-color: #0A192F;
+    color: #F8FAFC;
+  }
+}
+
+/* Minimal Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F8FAFC;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
