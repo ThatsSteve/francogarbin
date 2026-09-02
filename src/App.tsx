@@ -11,9 +11,18 @@ import { Phone, Calendar } from 'lucide-react';
 import { clinicInfo } from './data/clinicData';
 
 export const App: React.FC = () => {
-  // Page routing: 'home' | 'prenota' | 'prestazioni'
   const [currentPage, setCurrentPage] = useState<string>('home');
   const [isCvOpen, setIsCvOpen] = useState(false);
+  const [showMobileCta, setShowMobileCta] = useState(false);
+
+  // Show sticky mobile CTA only when user starts scrolling down
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowMobileCta(window.scrollY > 120);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   // Sync route with window.location.hash
   useEffect(() => {
@@ -95,31 +104,31 @@ export const App: React.FC = () => {
         onOpenCv={handleOpenCv}
       />
 
-      {/* 4. Sticky Mobile Action Bar - High Impact & Attention Grabbing */}
-      <aside aria-label="Contatto rapido" className="sm:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-slate-200/80 px-4 py-3 shadow-[0_-8px_30px_rgba(0,0,0,0.12)]">
-        {currentPage !== 'prenota' ? (
-          <button
-            onClick={() => handleNavigate('prenota')}
-            className="w-full h-13 rounded-xl bg-gradient-to-r from-clinical-sky via-clinical-skyDark to-navy-900 active:scale-[0.98] text-white font-bold text-base shadow-lg shadow-clinical-sky/35 flex items-center justify-center gap-2.5 transition-all relative overflow-hidden"
-          >
-            {/* Subtle animated live indicator dot */}
-            <span className="relative flex h-2.5 w-2.5 mr-0.5">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-200 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-white"></span>
-            </span>
-            <Calendar className="w-5 h-5 text-white" />
-            <span>Prenota Ora</span>
-          </button>
-        ) : (
-          <a
-            href={clinicInfo.phoneTel}
-            className="w-full h-13 rounded-xl bg-gradient-to-r from-clinical-sky to-navy-900 active:scale-[0.98] text-white font-bold text-base shadow-lg shadow-clinical-sky/35 flex items-center justify-center gap-2.5 transition-all"
-          >
-            <Phone className="w-5 h-5" />
-            <span>Chiama per Prenotare</span>
-          </a>
-        )}
-      </aside>
+      {/* 4. Sticky Mobile Action Bar - Visible only after scrolling, taller, matching site style */}
+      {showMobileCta && (
+        <aside 
+          aria-label="Contatto rapido" 
+          className="sm:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-slate-200 px-4 py-3 shadow-[0_-8px_30px_rgba(10,25,47,0.15)] transition-all duration-300"
+        >
+          {currentPage !== 'prenota' ? (
+            <button
+              onClick={() => handleNavigate('prenota')}
+              className="w-full h-[60px] rounded-2xl bg-navy-900 active:bg-navy-800 text-white font-bold text-base shadow-lg shadow-navy-900/30 flex items-center justify-center gap-3 transition-all cursor-pointer"
+            >
+              <Calendar className="w-5 h-5 text-clinical-skyLight" />
+              <span>Prenota Ora</span>
+            </button>
+          ) : (
+            <a
+              href={clinicInfo.phoneTel}
+              className="w-full h-[60px] rounded-2xl bg-navy-900 active:bg-navy-800 text-white font-bold text-base shadow-lg shadow-navy-900/30 flex items-center justify-center gap-3 transition-all"
+            >
+              <Phone className="w-5 h-5 text-clinical-skyLight" />
+              <span>Chiama per Prenotare</span>
+            </a>
+          )}
+        </aside>
+      )}
 
       {/* 5. Curriculum Vitae Reader Modal (36 Pages) */}
       <CvModal
