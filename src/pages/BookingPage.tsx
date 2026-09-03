@@ -82,7 +82,7 @@ export const BookingPage: React.FC = () => {
                   Chiama lo Studio
                 </div>
                 <p className="text-xs text-slate-600 leading-relaxed">
-                  Nei giorni di Lunedì, Mercoledì e Venerdì dalle ore 15.30 alle 18.30.
+                  Ambulatorio il Lunedì, Martedì e Mercoledì dalle 15:00 alle 19:00 (in altri giorni o orari previo accordo).
                 </p>
               </div>
             </div>
@@ -129,38 +129,42 @@ export const BookingPage: React.FC = () => {
                 Orari di Ricevimento e Prenotazione
               </h3>
               <p className="text-sm text-slate-500 mt-0.5">
-                Ricevimento e prenotazioni telefoniche (Lun, Mer, Ven 15:30 - 18:30)
+                Ambulatorio: Lunedì, Martedì e Mercoledì (15:00 - 19:00) • In altri giorni o orari è possibile previo accordo
               </p>
             </div>
           </div>
 
           {/* Timetable */}
           <div className="overflow-hidden rounded-2xl border border-slate-200">
-            <table className="w-full text-left text-sm">
-              <thead className="bg-slate-50 text-slate-600 text-xs font-semibold uppercase tracking-wider border-b border-slate-200">
+            <table className="w-full text-left text-xs sm:text-sm">
+              <thead className="bg-slate-50 text-slate-600 text-[11px] sm:text-xs font-semibold uppercase tracking-wider border-b border-slate-200">
                 <tr>
-                  <th className="py-4 px-5">Giorno</th>
-                  <th className="py-4 px-5">Orario Prenotazioni & Ambulatorio</th>
-                  <th className="py-4 px-5 text-right">Stato</th>
+                  <th className="py-3.5 px-3 sm:px-5">Giorno</th>
+                  <th className="py-3.5 px-3 sm:px-5">Orario Ambulatorio</th>
+                  <th className="py-3.5 px-3 sm:px-5 text-right">Disponibilità</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-100 text-slate-700">
                 {clinicInfo.schedules.map((schedule) => (
                   <tr key={schedule.day} className="hover:bg-slate-50/50">
-                    <td className="py-4 px-5 font-semibold text-slate-900">
+                    <td className="py-3.5 px-3 sm:px-5 font-semibold text-slate-900 align-middle whitespace-nowrap">
                       {schedule.day}
                     </td>
-                    <td className="py-4 px-5">
+                    <td className="py-3.5 px-3 sm:px-5 text-slate-600 align-middle">
                       {schedule.hours}
                     </td>
-                    <td className="py-4 px-5 text-right">
+                    <td className="py-3.5 px-3 sm:px-5 text-right align-middle">
                       {schedule.isOpen ? (
-                        <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800">
-                          Attivo
+                        <span className="inline-flex items-center justify-center px-2.5 py-1 rounded-full text-[11px] sm:text-xs font-semibold bg-emerald-100 text-emerald-800 whitespace-nowrap">
+                          Aperto
+                        </span>
+                      ) : schedule.day === "Domenica" ? (
+                        <span className="inline-flex items-center justify-center px-2.5 py-1 rounded-full text-[11px] sm:text-xs font-medium bg-slate-100 text-slate-500 whitespace-nowrap">
+                          Chiuso
                         </span>
                       ) : (
-                        <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-600">
-                          Su contatto
+                        <span className="inline-flex items-center justify-center px-2.5 py-1 rounded-full text-[11px] sm:text-xs font-medium bg-amber-50 text-amber-800 border border-amber-200/80 whitespace-nowrap">
+                          Previo accordo
                         </span>
                       )}
                     </td>

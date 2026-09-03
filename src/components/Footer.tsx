@@ -58,7 +58,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenCv }) => {
                 <a href={clinicInfo.phoneTel} className="text-white hover:text-clinical-sky font-semibold transition-colors">
                   Cell. {clinicInfo.phoneFormatted}
                 </a>
-                <span className="text-slate-500 text-[11px]">(Lun, Mer, Ven 15:30 - 18:30)</span>
+                <span className="text-slate-400 text-[11px]">(Ambulatorio Lun, Mar, Mer 15:00 - 19:00 • In altri giorni o orari previo accordo)</span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-clinical-sky flex-shrink-0" />

@@ -13,27 +13,25 @@ export const ServicesBento: React.FC<ServicesBentoProps> = ({ onNavigate }) => {
   return (
     <section id="prestazioni" className="relative py-14 sm:py-24 bg-white border-b border-slate-200 scroll-mt-20 overflow-hidden">
       
-      {/* Background Doctor Image:
-          - On mobile: visible at the top, fading down to white
-          - On desktop: visible on the right, fading to the left */}
-      <div className="absolute top-0 right-0 w-full lg:w-1/2 h-[260px] sm:h-[340px] lg:h-[480px] pointer-events-none z-0 overflow-hidden">
+      {/* Background Doctor Image: foto ben visibile, alta opacità e altezza generosa */}
+      <div className="absolute top-0 right-0 w-full sm:w-2/3 lg:w-[480px] xl:w-[560px] 2xl:w-[620px] h-[480px] sm:h-[540px] lg:h-[620px] pointer-events-none z-0 overflow-hidden">
         <img
           src="./media/ChatGPT edit2b2.jpg"
           alt=""
           aria-hidden="true"
-          className="w-full h-full object-cover object-top opacity-85 lg:opacity-80 filter contrast-[1.03]"
+          className="w-full h-full object-cover object-[center_top] opacity-90 sm:opacity-95 lg:opacity-95 filter contrast-[1.03] brightness-[1.01]"
         />
-        {/* Gradient for mobile: fades down to white so lowered text is on pure white */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/30 via-55% to-white lg:hidden" />
-        {/* Gradient for desktop: fades to the left */}
-        <div className="hidden lg:block absolute inset-0 bg-gradient-to-r from-white via-white/50 via-40% to-transparent" />
+        {/* Sfumatura morbida alla base per integrarsi con i contenuti */}
+        <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-white via-white/80 to-transparent lg:hidden" />
+        <div className="hidden lg:block absolute inset-y-0 left-0 w-40 bg-gradient-to-r from-white via-white/20 to-transparent" />
+        <div className="hidden lg:block absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-white to-transparent" />
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header Block:
-            On mobile, pt-48 lowers the title and booking box so the doctor's face in the background is fully visible above without overlap! */}
-        <div className="pt-48 sm:pt-56 lg:pt-0 mb-10 sm:mb-12 pb-6 sm:pb-8 border-b border-slate-200/80 max-w-2xl">
+            Su mobile pt-[280px] lascia piena visibilità all'intero ritratto del medico */}
+        <div className="pt-[280px] sm:pt-[340px] lg:pt-0 mb-10 sm:mb-12 pb-6 sm:pb-8 border-b border-slate-200/80 max-w-2xl">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-navy-900 tracking-tight leading-tight">
             Prestazioni Mediche
           </h2>

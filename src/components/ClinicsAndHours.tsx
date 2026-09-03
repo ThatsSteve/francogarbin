@@ -47,13 +47,16 @@ export const ClinicsAndHours: React.FC<ClinicsAndHoursProps> = ({ onNavigate }) 
               <div className="p-4 rounded-xl bg-white/5 border border-white/10">
                 <div className="flex items-center gap-2 text-clinical-sky text-xs font-bold uppercase tracking-wider mb-1.5">
                   <Clock className="w-4 h-4" />
-                  <span>Orari per Prenotare</span>
+                  <span>Orari Ambulatorio</span>
                 </div>
                 <div className="text-sm font-semibold text-white">
-                  Lunedì, Mercoledì, Venerdì
+                  Lunedì, Martedì, Mercoledì
                 </div>
-                <div className="text-xs text-slate-400 mt-0.5">
-                  Dalle ore 15,30 alle 18.30
+                <div className="text-xs text-clinical-skyLight font-medium mt-0.5">
+                  Dalle ore 15:00 alle 19:00
+                </div>
+                <div className="text-[11px] text-slate-400 mt-1.5 border-t border-white/10 pt-1.5">
+                  In altri giorni o orari: <span className="text-slate-300 font-medium">previo accordo</span>
                 </div>
               </div>
 
@@ -68,6 +71,9 @@ export const ClinicsAndHours: React.FC<ClinicsAndHoursProps> = ({ onNavigate }) 
                 <div className="text-xs text-slate-400 mt-0.5">
                   {clinicInfo.callbackNote}
                 </div>
+                <div className="text-[11px] text-slate-400 mt-1.5 border-t border-white/10 pt-1.5">
+                  Risposta rapida per concordare la visita
+                </div>
               </div>
             </div>
 
@@ -75,7 +81,7 @@ export const ClinicsAndHours: React.FC<ClinicsAndHoursProps> = ({ onNavigate }) 
             <div className="p-3.5 rounded-xl bg-clinical-sky/10 border border-clinical-sky/20 flex items-start gap-2.5 text-xs text-slate-200">
               <CheckCircle2 className="w-4 h-4 text-clinical-sky flex-shrink-0 mt-0.5" />
               <span>
-                <strong>Per prenotare una visita:</strong> Telefonare al Cell. <strong>{clinicInfo.phoneFormatted}</strong> nei giorni di Lunedì, Mercoledì e Venerdì (15.30 - 18.30). In caso di mancata risposta, lasciare un messaggio e verrete richiamate.
+                <strong>Per prenotare una visita:</strong> Telefonare al Cell. <strong>{clinicInfo.phoneFormatted}</strong>. Ambulatorio il Lunedì, Martedì e Mercoledì dalle 15:00 alle 19:00. In altri giorni o orari è possibile previo accordo. In caso di mancata risposta, lasciare un messaggio e verrete richiamate.
               </span>
             </div>
 

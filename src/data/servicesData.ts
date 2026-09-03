@@ -60,7 +60,7 @@ export const bookingNotice = {
   title: "Per prenotare una visita",
   phone: "339 413 2022",
   phoneTel: "tel:+393394132022",
-  hours: "Lunedì, mercoledì, venerdì, dalle ore 15.30 alle 18.30.",
+  hours: "Ambulatorio il Lunedì, Martedì e Mercoledì dalle 15:00 alle 19:00. In altri giorni o orari è possibile previo accordo.",
   callbackNotice: "In caso di mancata risposta, lasciare un messaggio e verrete richiamate.",
   address: "Via Cristoforo Colombo 4, Mirano (VE)",
   email: "francogarbin@gmail.com"

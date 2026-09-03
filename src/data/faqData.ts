@@ -7,7 +7,7 @@ export interface FaqItem {
 export const faqList: FaqItem[] = [
   {
     question: "Come posso prenotare una visita specialistica?",
-    answer: "La prenotazione si effettua telefonando al Cell. 339 413 2022 nei giorni di Lunedì, Mercoledì e Venerdì dalle ore 15.30 alle 18.30. In caso di mancata risposta, è sufficiente lasciare un messaggio e verrete richiamate al più presto.",
+    answer: "La prenotazione si effettua telefonando al Cell. 339 413 2022. Ambulatorio il Lunedì, Martedì e Mercoledì dalle 15:00 alle 19:00. In altri giorni o orari è possibile previo accordo. In caso di mancata risposta, è sufficiente lasciare un messaggio in segreteria e verrete richiamate al più presto.",
     category: "booking"
   },
   {

@@ -212,8 +212,8 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenC
                     <div className="flex items-start gap-2.5">
                       <Clock className="w-4 h-4 text-slate-400 flex-shrink-0 mt-0.5" />
                       <div>
-                        <strong className="text-slate-800">Orari per prenotare:</strong> Lunedì, Mercoledì, Venerdì (15:30 - 18:30)
-                        <div className="text-[11px] text-slate-500 mt-0.5">In caso di mancata risposta, lasciare un messaggio e verrete richiamate.</div>
+                        <strong className="text-slate-800">Orari ambulatorio:</strong> Lunedì, Martedì, Mercoledì (15:00 - 19:00)
+                        <div className="text-[11px] text-slate-500 mt-0.5">In altri giorni o orari è possibile previo accordo. Segreteria attiva con richiamata.</div>
                       </div>
                     </div>
                   </div>

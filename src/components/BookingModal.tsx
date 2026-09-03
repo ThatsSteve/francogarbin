@@ -23,7 +23,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, ini
   const [fullName, setFullName] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
-  const [preferredSlot, setPreferredSlot] = useState('Lunedì (15:30 - 18:30)');
+  const [preferredSlot, setPreferredSlot] = useState('Lunedì (15:00 - 19:00)');
   const [notes, setNotes] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -135,11 +135,15 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, ini
                   onChange={(e) => setPreferredSlot(e.target.value)}
                   className="w-full px-3.5 py-2.5 rounded-lg border border-slate-200 bg-white text-slate-800 text-xs sm:text-sm font-medium focus:ring-1 focus:ring-navy-900 focus:border-navy-900 outline-none transition-all"
                 >
-                  <option value="Lunedì (15:30 - 18:30)">Lunedì pomeriggio (15:30 - 18:30)</option>
-                  <option value="Mercoledì (15:30 - 18:30)">Mercoledì pomeriggio (15:30 - 18:30)</option>
-                  <option value="Venerdì (15:30 - 18:30)">Venerdì pomeriggio (15:30 - 18:30)</option>
-                  <option value="Altro orario flessibile / Urgenza">Altra fascia oraria personalizzata / Urgenza</option>
+                  <option value="Lunedì (15:00 - 19:00)">Lunedì pomeriggio (15:00 - 19:00)</option>
+                  <option value="Martedì (15:00 - 19:00)">Martedì pomeriggio (15:00 - 19:00)</option>
+                  <option value="Mercoledì (15:00 - 19:00)">Mercoledì pomeriggio (15:00 - 19:00)</option>
+                  <option value="Altro giorno o orario (previo accordo)">Altro giorno o orario (previo accordo)</option>
+                  <option value="Urgenza medica / Richiesta tempestiva">Urgenza medica / Richiesta tempestiva</option>
                 </select>
+                <p className="text-[11px] text-slate-500 mt-1">
+                  Ambulatorio il Lunedì, Martedì e Mercoledì dalle 15:00 alle 19:00. In altri giorni o orari è possibile previo accordo.
+                </p>
               </div>
 
               {/* Nome e Cognome */}

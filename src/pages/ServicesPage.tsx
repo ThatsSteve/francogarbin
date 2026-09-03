@@ -16,20 +16,18 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate }) => {
       {/* Header Section with Background Doctor Image */}
       <section className="relative border-b border-slate-200 py-10 sm:py-16 bg-surface-50 overflow-hidden">
         
-        {/* Background Image:
-            - On mobile: visible at the top, fading down to surface-50
-            - On desktop: visible on the right, fading to the left */}
-        <div className="absolute top-0 right-0 w-full lg:w-1/2 h-[260px] sm:h-[340px] lg:h-full max-h-[480px] pointer-events-none z-0 overflow-hidden">
+        {/* Background Image: foto ben visibile, alta opacità e altezza generosa */}
+        <div className="absolute top-0 right-0 w-full sm:w-2/3 lg:w-[480px] xl:w-[560px] 2xl:w-[620px] h-[480px] sm:h-[540px] lg:h-full max-h-[620px] pointer-events-none z-0 overflow-hidden">
           <img
             src="./media/ChatGPT edit2b2.jpg"
             alt=""
             aria-hidden="true"
-            className="w-full h-full object-cover object-top opacity-85 lg:opacity-80 filter contrast-[1.03]"
+            className="w-full h-full object-cover object-[center_top] opacity-90 sm:opacity-95 lg:opacity-95 filter contrast-[1.03] brightness-[1.01]"
           />
-          {/* Mobile gradient: fades down to surface-50 */}
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-surface-50/30 via-55% to-surface-50 lg:hidden" />
-          {/* Desktop gradient: fades to the left */}
-          <div className="hidden lg:block absolute inset-0 bg-gradient-to-r from-surface-50 via-surface-50/60 via-40% to-transparent" />
+          {/* Sfumatura morbida alla base per integrarsi con i contenuti */}
+          <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-surface-50 via-surface-50/80 to-transparent lg:hidden" />
+          <div className="hidden lg:block absolute inset-y-0 left-0 w-40 bg-gradient-to-r from-surface-50 via-surface-50/20 to-transparent" />
+          <div className="hidden lg:block absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-surface-50 to-transparent" />
         </div>
 
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -42,8 +40,8 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate }) => {
             <span>Torna alla Homepage</span>
           </button>
 
-          {/* Title and Booking box: pushed down on mobile so the doctor's face in the background is fully clear above */}
-          <div className="pt-48 sm:pt-56 lg:pt-0 max-w-2xl space-y-3">
+          {/* Title and Booking box: positioned cleanly on surface-50 */}
+          <div className="pt-[280px] sm:pt-[340px] lg:pt-0 max-w-2xl space-y-3">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-navy-900 tracking-tight leading-tight">
               Prestazioni Mediche
             </h1>
