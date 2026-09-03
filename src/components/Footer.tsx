@@ -35,15 +35,22 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenCv }) => {
           
           {/* Left: Doctor info, contacts, quick links */}
           <div className="lg:col-span-7 space-y-5">
-            <div>
-              <div className="font-heading font-bold text-xl text-white">
-                Dott. Franco Garbin
-              </div>
-              <div className="text-slate-300 text-xs mt-0.5 font-medium">
-                Specialista in Ginecologia e Ostetricia
-              </div>
-              <div className="text-slate-500 text-[11px] mt-0.5">
-                Già Direttore U.O.C. Ospedali di Mirano e Dolo (VE)
+            <div className="flex items-center gap-3">
+              <img 
+                src="./logo.png" 
+                alt="Logo Dott. Franco Garbin" 
+                className="w-11 h-11 sm:w-12 sm:h-12 rounded-full object-contain flex-shrink-0" 
+              />
+              <div>
+                <div className="font-heading font-bold text-xl text-white">
+                  Dott. Franco Garbin
+                </div>
+                <div className="text-slate-300 text-xs mt-0.5 font-medium">
+                  Specialista in Ginecologia e Ostetricia
+                </div>
+                <div className="text-slate-500 text-[11px] mt-0.5">
+                  Già Direttore U.O.C. Ospedali di Mirano e Dolo (VE)
+                </div>
               </div>
             </div>
 
@@ -131,12 +138,29 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenCv }) => {
 
         {/* Minimal Bottom Bar */}
         <div className="pt-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-slate-500">
-          <div>
-            &copy; {currentYear} Dott. Franco Garbin. Informativa sanitaria conforme alle Linee Guida FNOMCeO.
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-center sm:text-left">
+            <span>&copy; {currentYear} Dott. Franco Garbin. Informativa sanitaria conforme alle Linee Guida FNOMCeO.</span>
+            <div className="flex items-center gap-3 text-slate-400">
+              <a
+                href="https://www.iubenda.com/privacy-policy/74969239"
+                className="iubenda-white iubenda-noiframe iubenda-embed hover:text-white transition-colors"
+                title="Privacy Policy "
+              >
+                Privacy Policy
+              </a>
+              <span className="text-slate-700">•</span>
+              <a
+                href="https://www.iubenda.com/privacy-policy/74969239/cookie-policy"
+                className="iubenda-white iubenda-noiframe iubenda-embed hover:text-white transition-colors"
+                title="Cookie Policy "
+              >
+                Cookie Policy
+              </a>
+            </div>
           </div>
           <button
             onClick={scrollToTop}
-            className="inline-flex items-center gap-1 text-slate-400 hover:text-white transition-colors"
+            className="inline-flex items-center gap-1 text-slate-400 hover:text-white transition-colors flex-shrink-0"
           >
             <span>Torna su</span>
             <ArrowUp className="w-3 h-3" />

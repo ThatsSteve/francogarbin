@@ -78,17 +78,24 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenC
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between gap-3">
           
-          {/* Doctor Name - Clean Typography */}
+          {/* Doctor Name & Circular Brand Logo */}
           <button 
             onClick={() => handleNavClick('home')} 
-            className="flex-shrink-0 group py-1 text-left"
+            className="flex-shrink-0 group py-1 text-left flex items-center gap-2.5 sm:gap-3 cursor-pointer"
           >
-            <span className="font-heading font-bold text-xl sm:text-2xl text-navy-900 tracking-tight whitespace-nowrap group-hover:text-clinical-sky transition-colors">
-              Dr. Franco Garbin
-            </span>
-            <span className="text-[11px] text-slate-500 font-medium tracking-wide block sm:hidden">
-              Ginecologo • Mirano (VE)
-            </span>
+            <img 
+              src="./logo.png" 
+              alt="Logo Dott. Franco Garbin" 
+              className="w-8 h-8 sm:w-9 sm:h-9 rounded-full object-contain flex-shrink-0 transition-transform group-hover:scale-105" 
+            />
+            <div>
+              <span className="font-heading font-bold text-lg sm:text-2xl text-navy-900 tracking-tight whitespace-nowrap group-hover:text-clinical-sky transition-colors block leading-tight">
+                Dr. Franco Garbin
+              </span>
+              <span className="text-[11px] text-slate-500 font-medium tracking-wide block sm:hidden">
+                Ginecologo • Mirano (VE)
+              </span>
+            </div>
           </button>
 
           {/* Right Action Elements */}
